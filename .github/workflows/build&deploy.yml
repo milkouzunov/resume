@@ -16,7 +16,8 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
-    
+      with:
+          fetch-depth: 0
     - name: Install Node.js
       uses: actions/setup-node@v1
       with:
@@ -45,10 +46,18 @@ jobs:
       with:
         name: production-files
         path: ./build
-    - name: Deploy to gh-pages   
-      uses: akhileshns/heroku-deploy@v3.12.12 
-      with:
-          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-          heroku_app_name: ${{secrets.HEROKU_APP_NAME}}
-          heroku_email: ${{secrets.HEROKU_EMAIL}}
-          publish_dir: ./build
+    - name: Deploy to Heroku  
+      run: |
+          cat > ~/.netrc <<EOF
+            machine api.heroku.com
+              login ${{secrets.HEROKU_EMAIL}}
+              password ${{secrets.HEROKU_API_KEY}}
+            machine git.heroku.com
+              login ${{secrets.HEROKU_EMAIL}}
+              password ${{secrets.HEROKU_API_KEY}}
+          EOF
+    - name: Add Heroku remote
+      run: heroku git add ./build
+    - run: heroku git:remote --app ${{ secrets.HEROKU_APP_NAME }}
+    - name: Push to Heroku
+      run: git push heroku master

@@ -46,6 +46,7 @@ jobs:
       with:
         name: production-files
         path: ./build
+        publish_dir: ./build
     - name: Deploy to Heroku  
       run: |
           cat > ~/.netrc <<EOF
@@ -56,8 +57,7 @@ jobs:
               login ${{secrets.HEROKU_EMAIL}}
               password ${{secrets.HEROKU_API_KEY}}
           EOF
-           publish_dir: ./build
     - name: Add Heroku remote
       run: heroku git:remote -a ${{ secrets.HEROKU_APP_NAME }}
     - name: Heroku push
-    - run: git push heroku main
+      run: git push heroku main

@@ -48,16 +48,8 @@ jobs:
         path: ./build
         publish_dir: ./build
     - name: Deploy to Heroku  
-      run: |
-          cat > ~/.netrc <<EOF
-            machine api.heroku.com
-              login ${{secrets.HEROKU_EMAIL}}
-              password ${{secrets.HEROKU_API_KEY}}
-            machine git.heroku.com
-              login ${{secrets.HEROKU_EMAIL}}
-              password ${{secrets.HEROKU_API_KEY}}
-          EOF
-    - name: Add Heroku remote
-      run: heroku git:remote -a ${{ secrets.HEROKU_APP_NAME }}
-    - name: Heroku push
-      run: git push heroku main
+      uses: akhileshns/heroku-deploy@v3.12.12
+      with:
+        heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
+        heroku_app_name: ${{ secrets.HEROKU_APP_NAME }}
+        heroku_email: ${{ secrets.HEROKU_EMAIL }}

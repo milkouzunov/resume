@@ -30,9 +30,9 @@ function Footer({ social }) {
           </ul>
         </div>
         <div id="go-top">
-          <a onClick={scrollToTop} href="javascript:void(0)" className="smoothscroll">
+          <button onClick={scrollToTop} className="smoothscroll">
             <i className="icon-up-open"></i>
-          </a>
+          </button>
         </div>
       </div>
     </footer>

@@ -56,9 +56,8 @@ jobs:
               login ${{secrets.HEROKU_EMAIL}}
               password ${{secrets.HEROKU_API_KEY}}
           EOF
+           publish_dir: ./build
     - name: Add Heroku remote
-      run: git init
-    - run: git add ./build
-    - run: git commit -am "deploy"
-    - run: heroku git:remote -a ${{ secrets.HEROKU_APP_NAME }}
+      run: heroku git:remote -a ${{ secrets.HEROKU_APP_NAME }}
+    - name: Heroku push
     - run: git push heroku main

@@ -21,7 +21,7 @@ function Header({ resumeData }) {
       <nav id="nav-wrap">
         <button onClick={viewNavHandler} className="mobile-btn"></button>
 
-        <ul id="nav" className={viewNav ? "nav-view" : "nav-hide"}>
+        <ul id="nav" onClick={viewNavHandler} className={viewNav ? "nav-view" : "nav-hide"}>
           <li>
             <Link
               activeClass="active"
@@ -31,6 +31,7 @@ function Header({ resumeData }) {
               smooth={true}
               offset={-70}
               duration={500}
+              onClick={viewNavHandler}
             >
               Home
             </Link>
@@ -44,6 +45,7 @@ function Header({ resumeData }) {
               smooth={true}
               offset={-70}
               duration={500}
+              onClick={viewNavHandler}
             >
               About
             </Link>
@@ -57,6 +59,7 @@ function Header({ resumeData }) {
               smooth={true}
               offset={-70}
               duration={500}
+              onClick={viewNavHandler}
             >
               Resume
             </Link>
@@ -70,6 +73,7 @@ function Header({ resumeData }) {
               smooth={true}
               offset={-70}
               duration={500}
+              onClick={viewNavHandler}
             >
               Works
             </Link>

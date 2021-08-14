@@ -256,7 +256,7 @@ ul#nav li a:active { background-color: transparent !important; }
    padding-bottom: 6px;
 }
 #resume h3 {
-   font: 25px/30px 'opensans-bold', sans-serif;
+   font: 25px/30px 'librebaskerville-italic', serif;
 }
 
 #resume .header-col { padding-top: 9px; }
@@ -274,8 +274,7 @@ ul#nav li a:active { background-color: transparent !important; }
    margin-top: 9px;
 }
 #resume .info span {
-   margin-right: 5px;
-   margin-left: 5px;
+   size: 5px;
 }
 #resume .date {
    font: 15px/24px 'opensans-regular', sans-serif;
@@ -421,6 +420,7 @@ ul#nav li a:active { background-color: transparent !important; }
    background: #ebeeee;
    padding-top: 90px;
    padding-bottom: 60px;
+   text-align: -webkit-center;
 }
 #portfolio h1 {
    font: 15px/24px 'opensans-semibold', sans-serif;
@@ -434,6 +434,7 @@ ul#nav li a:active { background-color: transparent !important; }
 /* Portfolio Content */
 #portfolio-wrapper .columns { margin-bottom: 36px; }
 .portfolio-item .item-wrap {
+   width: fit-content;
    background: #fff;
    overflow: hidden;
    position: relative;
@@ -494,6 +495,8 @@ ul#nav li a:active { background-color: transparent !important; }
 }
 .portfolio-item .item-wrap img {
    vertical-align: bottom;
+   height: 160px;
+   width: 200px;
 }
 .portfolio-item .portfolio-item-meta { padding: 18px }
 .portfolio-item .portfolio-item-meta h5 {

@@ -444,6 +444,8 @@ ul#nav li a:active { background-color: transparent !important; }
 	-o-transition: all 0.3s ease-in-out;
 	-ms-transition: all 0.3s ease-in-out;
 	transition: all 0.3s ease-in-out;
+   height: 142px;
+   width: 200px;
 }
 .portfolio-item .item-wrap a {
    display: block;

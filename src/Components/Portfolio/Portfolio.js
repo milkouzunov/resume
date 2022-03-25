@@ -1,4 +1,4 @@
-import Project from "./Project";
+import ProjectSlider from "./ProjectSlider";
 
 function Portfolio({portfolio}) {
   return (
@@ -11,11 +11,7 @@ function Portfolio({portfolio}) {
             id="portfolio-wrapper"
             className="bgrid-quarters s-bgrid-thirds cf"
           >
-            {portfolio?.projects
-              ? portfolio?.projects.map((x) => (
-                  <Project key={x._id} project={x} />
-                ))
-              : null}
+            <ProjectSlider projects={portfolio.projects}/>
           </div>
         </div>
       </div>

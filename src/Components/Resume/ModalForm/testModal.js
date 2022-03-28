@@ -1,10 +1,10 @@
-import { Select,message, Input, Modal, Button, Avatar, Dropdown } from "antd";
-import { PlusOutlined } from "@ant-design/icons"
+import { message, Input, Modal, Button, Avatar } from "antd";
+// import { PlusOutlined } from "@ant-design/icons"
 import {  useState } from "react";
 
 import { addSkill } from "../../../services/index";
 
-import js_icon from "../../../images/js_icon.png";
+// import js_icon from "../../../images/js_icon.png";
 
 export default function TestModal({resumeId, setVisible}) {
   const [skills, setSkills] = useState([

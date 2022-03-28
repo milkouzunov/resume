@@ -8,7 +8,7 @@ import { faPlusCircle } from "@fortawesome/free-solid-svg-icons";
 import { useState, useEffect, useContext } from "react";
 import FormEdit from "./ModalForm/ModalForm";
 import AuthContext from "../../AuthContext";
-import TestModal from "./ModalForm/testModal";
+// import TestModal from "./ModalForm/testModal";
 
 function Resume({ resume }) {
   const [currentPageSkills, setCurrentPageSkills] = useState(1);
@@ -26,9 +26,11 @@ function Resume({ resume }) {
 
   useEffect(() => {
     skillsSeeMore();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentPageSkills]);
   useEffect(() => {
     coursesSeeMore();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentPageCourses]);
 
   const skillsSeeMore = () => {

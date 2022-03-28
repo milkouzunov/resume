@@ -53,6 +53,7 @@ export default function FormEdit({
         certificate: data.certificate,
       });
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data]);
 
   const handleOnSubmitEducation = (event) => {

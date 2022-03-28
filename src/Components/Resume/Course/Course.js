@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/img-redundant-alt */
 import { Modal } from "antd";
 import { useState, useContext } from "react";
 import { EditOutlined, DeleteOutlined } from "@ant-design/icons";
@@ -53,7 +54,7 @@ function Course({ course, resumeId }) {
         onCancel={() => setCertificateVisible(false)}
         footer={null}
       >
-        <img alt="certificate-image" src={certificate} />
+        <img src={certificate} alt="certificate-image" />
       </Modal>
       {editFormVisible && (
         <FormEdit

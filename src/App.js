@@ -33,6 +33,7 @@ function App() {
       setTimerTotal(timer);
       handleStartTimer();
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {

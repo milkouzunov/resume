@@ -48,7 +48,7 @@ jobs:
         name: production-files
         path: ./build
 
-    - name: Deploy to gh-pages
+    - name: Deploy to prod
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.TOKEN_GITHUB }}

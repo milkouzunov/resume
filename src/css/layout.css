@@ -111,6 +111,16 @@ header .social {
   font-size: 30px;
   text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.8);
 }
+.social .social-icon,
+.social-links .social-icon {
+  width: 25px;
+  max-width: 25px;
+  filter: brightness(0) saturate(100%) invert(37%) sepia(97%) saturate(411%) hue-rotate(84deg) brightness(98%) contrast(93%);
+}
+.social .social-icon:hover,
+.social-links .social-icon:hover {
+  filter: brightness(0) saturate(100%) invert(50%) sepia(88%) saturate(5071%) hue-rotate(12deg) brightness(105%) contrast(101%);
+}
 header .social li {
   display: inline-block;
   margin: 0 15px;
@@ -143,8 +153,13 @@ header .scrolldown a {
   -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
-header .scrolldown a:hover {
-  color: #179038;
+
+header .scrolldown .scroll-down-icon {
+  filter: brightness(0) saturate(100%) invert(37%) sepia(97%) saturate(411%) hue-rotate(84deg) brightness(98%) contrast(93%);
+}
+
+header .scrolldown .scroll-down-icon:hover {
+  filter: brightness(0) saturate(100%) invert(50%) sepia(88%) saturate(5071%) hue-rotate(12deg) brightness(105%) contrast(101%);
 }
 
 /* primary navigation
@@ -298,25 +313,11 @@ ul#nav li a:active {
   justify-content: end;
   color: #7a7a7a;
 }
-.row.contacts .contact-me .send-btn .dqbMYY {
-  width: 25px;
-  height: 25px;
+.row.contacts .contact-me .send-btn .loader-spinner {
+  width: 25px !important;
+  height: 25px !important;
 }
-.row.contacts .contact-me .send-btn .cEUfZw, 
-.row.contacts .contact-me .send-btn  .cOtVER,
-.row.contacts .contact-me .send-btn .boronx, 
-.row.contacts .contact-me .send-btn .gbmEkQ,
-.row.contacts .contact-me .send-btn .cUUbsf,
-.row.contacts .contact-me .send-btn .bQGFax,
-.row.contacts .contact-me .send-btn .btWKdk,
-.row.contacts .contact-me .send-btn .fsERlW,
-.row.contacts .contact-me .send-btn .itvoqo,
-.row.contacts .contact-me .send-btn .BXRXG,
-.row.contacts .contact-me .send-btn .dSWqyw,
-.row.contacts .contact-me .send-btn .bRdJRl {
-  width: 5px;
-  height: 5px;
-}
+
 
 .row.contacts .contact-me .header .title {
   color: #fff;
@@ -347,6 +348,8 @@ ul#nav li a:active {
 .row.contacts .contact-me .send-btn {
   width: 100%;
   height: 40px;
+  display: flex;
+  justify-content: center;
   background: transparent;
   color: #7a7a7a;
   font-size: 18px;
@@ -375,6 +378,9 @@ ul#nav li a:active {
 
 .loader {
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 100vh;
   min-height: 500px;
   width: 100%;
@@ -383,9 +389,6 @@ ul#nav li a:active {
   -webkit-background-size: cover !important;
   text-align: center;
   overflow: hidden;;
-}
-.loader .sc-kgoBCf .sc-kpOJdX {
-  background-color: #179038;
 }
 
 /* ------------------------------------------------------------------ */
@@ -1468,16 +1471,17 @@ footer .social-links li:first-child {
   left: 50%;
   margin-left: -30px;
 }
+
 #go-top .smoothscroll {
   text-decoration: none;
+  background-color: transparent !important;
+  padding: 0;
   border: 0 none;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 50px;
   height: 50px;
-  background-color: #179038;
-  color: #fff;
 
   -webkit-transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;
@@ -1488,17 +1492,13 @@ footer .social-links li:first-child {
   font-size: 21px;
   border-radius: 100%;
 }
-#go-top .smoothscroll:hover {
-  background-color: #fff;
-  border: 1px solid #179038;
+
+#go-top .smoothscroll .scroll-up-icon {
+  filter: brightness(0) saturate(100%) invert(37%) sepia(97%) saturate(411%) hue-rotate(84deg) brightness(98%) contrast(93%);
 }
 
-#go-top .smoothscroll .icon-up-open {
-  color: #fff;
-}
-
-#go-top .smoothscroll:hover > .icon-up-open {
-  color: #179038;
+#go-top .smoothscroll  .scroll-up-icon:hover {
+  filter: brightness(0) saturate(100%) invert(50%) sepia(88%) saturate(5071%) hue-rotate(12deg) brightness(105%) contrast(101%);
 }
 
 @media screen and (max-width: 450px) {

@@ -1,6 +1,12 @@
 import { Link } from "react-scroll";
 import { useState } from "react";
 
+import facebook from '../../images/facebook.svg';
+import instagram from '../../images/instagram.svg';
+import linkedin from '../../images/linkedin.svg';
+import github from '../../images/github.svg';
+import downIcon from '../../images/down-icon.svg';
+
 import Social from "../Social";
 
 function Header({ aboutMe }) {
@@ -14,6 +20,27 @@ function Header({ aboutMe }) {
     } else {
       setViewNav(true);
     }
+  }
+
+  const socialIcon = (name) => {
+    let icon;
+    switch (name) {
+      case 'facebook':
+        icon = facebook;
+      break;
+      case 'instagram':
+        icon = instagram;
+       break;
+      case 'linkedin':
+        icon = linkedin;
+      break;
+      case 'github':
+        icon = github;
+      break;
+      default:
+        return;
+    }
+    return <img className="social-icon" alt="social-icon" src={icon} />
   }
 
   return (
@@ -92,7 +119,7 @@ function Header({ aboutMe }) {
           <ul className="social">
             {social
               ? social.map((x) => (
-                  <Social key={x.name} name={x.name} url={x.url} />
+                  <Social socialIcon={socialIcon} key={x.name} name={x.name} url={x.url} />
                 ))
               : null}
           </ul>
@@ -109,7 +136,7 @@ function Header({ aboutMe }) {
           offset={-70}
           duration={500}
         >
-          <i className="icon-down-circle"></i>
+          <img className="scroll-down-icon" alt="down-icon" src={downIcon}/>
         </Link>
       </p>
     </header>

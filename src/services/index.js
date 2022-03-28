@@ -1,8 +1,8 @@
-const url = 'http://localhost:5000/api';
+import env from "react-dotenv";
 
 export async function getAboutMe() {
     try {
-        const data = await fetch(`${url}/about-me`);
+        const data = await fetch(`${env.URL}/about-me`);
         return data.json();
     } catch (err) {
         console.error(err);
@@ -13,7 +13,7 @@ export async function getAboutMe() {
 
 export async function getResume() {
     try {
-        const data = await fetch(`${url}/resume`);
+        const data = await fetch(`${env.URL}/resume`);
         return data.json();
     } catch (err) {
         console.error(err);
@@ -26,7 +26,7 @@ export async function editEducation(id, education) {
     const token = localStorage.getItem('access_token');
 
     try {
-        const response = await fetch(`${url}/resume/education/edit/${id}`, {
+        const response = await fetch(`${env.URL}/resume/education/edit/${id}`, {
             method: 'post',
             headers: {
                 'Content-Type': 'application/json',
@@ -60,7 +60,7 @@ export async function addEducation(resumeId, education) {
     const token = localStorage.getItem('access_token');
 
     try {
-        const response = await fetch(`${url}/resume/education/${resumeId}`, {
+        const response = await fetch(`${env.URL}/resume/education/${resumeId}`, {
             method: 'post',
             headers: {
                 'Content-Type': 'application/json',
@@ -94,7 +94,7 @@ export async function deleteEducation(resumeId, educationId) {
     const token = localStorage.getItem('access_token');
 
     try {
-        const response = await fetch(`${url}/resume/${resumeId}/education/delete/${educationId}`, {
+        const response = await fetch(`${env.URL}/resume/${resumeId}/education/delete/${educationId}`, {
             method: 'delete',
             headers: {
                 Authorization:  `Bearer ${token}`
@@ -128,7 +128,7 @@ export async function editCourse(id, course) {
     const token = localStorage.getItem('access_token');
 
     try {
-        const response = await fetch(`${url}/resume/courses/edit/${id}`, {
+        const response = await fetch(`${env.URL}/resume/courses/edit/${id}`, {
             method: 'post',
             headers: {
                 'Content-Type': 'application/json',
@@ -162,7 +162,7 @@ export async function addCourse(resumeId, course) {
     const token = localStorage.getItem('access_token');
 
     try {
-        const response = await fetch(`${url}/resume/courses/${resumeId}`, {
+        const response = await fetch(`${env.URL}/resume/courses/${resumeId}`, {
             method: 'post',
             headers: {
                 'Content-Type': 'application/json',
@@ -196,7 +196,7 @@ export async function deleteCourse(resumeId, courseId) {
     const token = localStorage.getItem('access_token');
 
     try {
-        const response = await fetch(`${url}/resume/${resumeId}/courses/delete/${courseId}`, {
+        const response = await fetch(`${env.URL}/resume/${resumeId}/courses/delete/${courseId}`, {
             method: 'delete',
             headers: {
                 Authorization:  `Bearer ${token}`
@@ -230,7 +230,7 @@ export async function addSkill(resumeId, skills) {
     const token = localStorage.getItem('access_token');
 
     try {
-        const response = await fetch(`${url}/resume/skills/${resumeId}`, {
+        const response = await fetch(`${env.URL}/resume/skills/${resumeId}`, {
             method: 'post',
             headers: {
                 'Content-Type': 'application/json',
@@ -264,7 +264,7 @@ export async function addSkill(resumeId, skills) {
 
 export async function getPortfolio() {
     try {
-        const data = await fetch(`${url}/portfolio`);
+        const data = await fetch(`${env.URL}/portfolio`);
         return data.json();
     } catch (err) {
         console.error(err);
@@ -275,7 +275,7 @@ export async function getPortfolio() {
 
 export async function signIn(user) {
     try {
-        const response = await fetch(`${url}/auth/login`, {
+        const response = await fetch(`${env.URL}/auth/login`, {
         method: 'post',
         headers: {
             'Content-Type': 'application/json',
@@ -316,7 +316,7 @@ export async function logout() {
     localStorage.removeItem('username');
 
     try {
-        const response = await fetch(`${url}/auth/revoke_token`, {
+        const response = await fetch(`${env.URL}/auth/revoke_token`, {
             method: 'post',
             headers: {
                 'x-access-token':  token
@@ -348,7 +348,7 @@ export async function refreshToken() {
     const token = localStorage.getItem('refresh_token');
 
     try {
-        const response = await fetch(`${url}/auth/refresh_token`, {
+        const response = await fetch(`${env.URL}/auth/refresh_token`, {
             method: 'post',
             headers: {
                 'x-access-token':  token

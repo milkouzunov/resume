@@ -5,6 +5,8 @@ import { faPhoneAlt, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import Loader from "../Components/Loader";
 import emailjs from "emailjs-com";
 
+import env from "react-dotenv";
+
 function About({ resumeData }) {
   const { name, imageUrl, bio, phone, email } = resumeData;
   const [isLoading, setIsLoading] = useState(false);
@@ -12,9 +14,9 @@ function About({ resumeData }) {
 
   const sendEmail = (data) => {
     setIsLoading(true);
-    // TODO add loader for send email form in button and inputs disable 
-    // TODO get from env service_id, temlate_id, user_id
-    emailjs.send('service_1xqnm9r', 'template_31bkp0b', data, 'user_CIsQ1beS1zmC2cRTdoC2m')
+    // TODO add loader for send email form in button
+
+    emailjs.send(env.SERVICE_ID, env.TEMPLATE_ID, data, env.USER_ID)
     .then(() => {
         message.success("Send");
         setIsLoading(false);

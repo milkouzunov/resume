@@ -4,6 +4,7 @@ import Skill from "./Skill";
 import { Button } from "antd";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlusCircle } from "@fortawesome/free-solid-svg-icons";
+
 import { useState, useEffect, useContext } from "react";
 import FormEdit from "./ModalForm/ModalForm";
 import AuthContext from "../../AuthContext";
@@ -179,7 +180,7 @@ function Resume({ resume }) {
         education={formType}
         setFormType={setFormType}
       />
-      <TestModal/>
+      {/* <TestModal/> */}
     </section>
   );
 }

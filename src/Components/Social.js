@@ -1,8 +1,8 @@
-export default function Social(network) {
+export default function Social({name, url, socialIcon}) {
   return (
     <li>
-      <a href={network.url} target="_blank">
-        <i className={"fa fa-" + network.name}></i>
+      <a href={url} target="_blank">
+        {socialIcon(name)}
       </a>
     </li>
   );

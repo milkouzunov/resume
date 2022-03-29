@@ -32,7 +32,7 @@ jobs:
     - name: Upload production-ready build files
       uses: actions/upload-artifact@v2
       with:
-        name: production
+        name: prod_folder
         path: ./build
   
   deploy:
@@ -45,7 +45,7 @@ jobs:
     - name: Download artifact
       uses: actions/download-artifact@v2
       with:
-        name: production
+        name: prod_folder
         path: ./build
 
     - name: Deploy to prod
